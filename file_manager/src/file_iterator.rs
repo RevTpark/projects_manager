@@ -6,9 +6,21 @@ use std::collections::HashMap;
 
 use crate::constants::GlobalConstants;
 
-pub fn iterate_over_files() -> Vec<HashMap<String, String>>{
+pub fn search_files(query: &str) -> Vec<HashMap<u16, String>>{
+    let project_map: Vec<HashMap<u16, String>> = iterate_over_files();
+    let mut filtered_projects: Vec<HashMap<u16, String>> = vec![];
+    let reg: Regex = Regex::new(&format!(r"(?i:^.*{}.*$)", query)).unwrap();
+    for projects in project_map{
+        if reg.is_match(projects.get(&2).unwrap()){
+            filtered_projects.push(projects);
+        }
+    }
+    return filtered_projects;
+}
+
+pub fn iterate_over_files() -> Vec<HashMap<u16, String>>{
     let base_directory: String = GlobalConstants::new().base_directory;
-    let mut final_projects_list: Vec<HashMap<String, String>> = vec![];
+    let mut final_projects_list: Vec<HashMap<u16, String>> = vec![];
     let project_directories: Vec<String> = GlobalConstants::new().project_directories;
     for directory in project_directories{
         for file in fs::read_dir(base_directory.clone()+&directory).unwrap(){
@@ -24,8 +36,10 @@ pub fn iterate_over_files() -> Vec<HashMap<String, String>>{
                     max_name = language.clone();
                 }
             }
-            let new_project: HashMap<String, String> = HashMap::from([
-                (path.display().to_string(), max_name)
+            let new_project: HashMap<u16, String> = HashMap::from([
+                (0, path.display().to_string()),
+                (1, max_name),
+                (2, path.file_name().unwrap().to_str().unwrap().to_string())
             ]);
             final_projects_list.push(new_project);
         }
