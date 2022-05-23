@@ -9,4 +9,5 @@ name = "file_manager"
 crate-type = ["cdylib"]
 
 [dependencies]
+regex = "1"
 pyo3 = { version = "0.16.3", features = ["extension-module"] }
