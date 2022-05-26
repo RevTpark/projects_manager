@@ -9,12 +9,10 @@ use crate::constants::GlobalConstants;
 pub fn filter_files(filter_query: String) ->  Vec<HashMap<u16, String>>{
     let project_map: Vec<HashMap<u16, String>> = iterate_over_files();
     let filtered:  Vec<HashMap<u16, String>> = project_map.into_iter().filter(|e| filter_query.eq(e.get(&1).unwrap())==true).collect();
-    println!("{:?}", filtered);
     return filtered;
 }
 
-pub fn search_files(query: &str) -> Vec<HashMap<u16, String>>{
-    let project_map: Vec<HashMap<u16, String>> = iterate_over_files();
+pub fn search_files(query: &str, project_map: Vec<HashMap<u16, String>>) -> Vec<HashMap<u16, String>>{
     let mut filtered_projects: Vec<HashMap<u16, String>> = vec![];
     let reg: Regex = Regex::new(&format!(r"(?i:^.*{}.*$)", query)).unwrap();
     for projects in project_map{

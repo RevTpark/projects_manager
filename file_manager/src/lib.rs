@@ -14,8 +14,8 @@ fn get_all_projects() -> PyResult<Vec<HashMap<u16, String>>> {
 }
 
 #[pyfunction]
-fn search_projects(query: &str) -> PyResult<Vec<HashMap<u16, String>>>{
-    Ok(search_files(query))
+fn search_projects(query: &str, project_list: Vec<HashMap<u16, String>>) -> PyResult<Vec<HashMap<u16, String>>>{
+    Ok(search_files(query, project_list))
 }
 
 #[pyfunction]
