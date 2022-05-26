@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>main_widget</class>
+ <widget class="QWidget" name="main_widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>523</width>
+    <height>383</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Project Manager</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: qlineargradient(spread:pad, x1:0.478, y1:0, x2:0.5, y2:1, stop:0 rgba(23, 173, 203, 159), stop:1 rgba(255, 255, 255, 0));
+
+</string>
+  </property>
+  <widget class="QLineEdit" name="search_field">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>40</y>
+     <width>361</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);
+border: 1px solid black;
+border-radius: 12px;</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="search_button">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>40</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(85, 255, 255, 100);</string>
+   </property>
+   <property name="text">
+    <string>Search</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="list_view">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>90</y>
+     <width>361</width>
+     <height>271</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QListWidget
+{
+background: rgba(0,0,0,128)
+}
+QListWidget QScrollBar
+{
+background : black;
+}
+
+QListView::item:selected
+{
+background: rgba(255, 255, 255, 255);
+}
+QListView::item
+{
+background : rgba(255, 255, 255, 128);
+color: rgba(0, 0, 0, 255);
+}</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="radio_container" native="true">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>107</y>
+     <width>81</width>
+     <height>221</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(0,0,0,0);</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QRadioButton" name="all_radio">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>All</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="python_radio">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>Python</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="dart_radio">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>Dart</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="rust_radio">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>Rust</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="html_radio">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>Html</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="css_radio">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>CSS</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="js_radio">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>JS</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="c_radio">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>C</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <zorder>list_view</zorder>
+  <zorder>search_field</zorder>
+  <zorder>search_button</zorder>
+  <zorder>python_radio</zorder>
+  <zorder>html_radio</zorder>
+  <zorder>css_radio</zorder>
+  <zorder>dart_radio</zorder>
+  <zorder>rust_radio</zorder>
+  <zorder>js_radio</zorder>
+  <zorder></zorder>
+  <zorder>all_radio</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
