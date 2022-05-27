@@ -6,15 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>523</width>
-    <height>383</height>
+    <width>510</width>
+    <height>400</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Project Manager</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: qlineargradient(spread:pad, x1:0.478, y1:0, x2:0.5, y2:1, stop:0 rgba(23, 173, 203, 159), stop:1 rgba(255, 255, 255, 0));
+   <string notr="true">background-color: qlineargradient(spread:pad, x1:0.478, y1:0, x2:0.5, y2:1, stop:0 rgba(23, 173, 203, 255), stop:1 rgba(255, 255, 255, 0));
 
 </string>
   </property>
@@ -206,17 +206,33 @@ color: white;</string>
     </item>
    </layout>
   </widget>
+  <widget class="QLabel" name="count_label">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>70</y>
+     <width>131</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(200, 200, 200);
+background-color: rgba(0,0,0,0);</string>
+   </property>
+   <property name="text">
+    <string>Some Text</string>
+   </property>
+  </widget>
   <zorder>list_view</zorder>
   <zorder>search_field</zorder>
   <zorder>search_button</zorder>
-  <zorder>python_radio</zorder>
-  <zorder>html_radio</zorder>
-  <zorder>css_radio</zorder>
-  <zorder>dart_radio</zorder>
-  <zorder>rust_radio</zorder>
-  <zorder>js_radio</zorder>
-  <zorder></zorder>
-  <zorder>all_radio</zorder>
+  <zorder>radio_container</zorder>
+  <zorder>count_label</zorder>
  </widget>
  <resources/>
  <connections/>

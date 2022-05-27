@@ -1,21 +1,25 @@
 import file_manager
 import sys
+import os
 from PyQt5.QtWidgets import QApplication, QWidget, QListWidgetItem
 from PyQt5 import uic, QtCore, QtWidgets
 from PyQt5.QtGui import QColor, QIcon, QPixmap
+
 
 class DemoApp(QWidget):
     def __init__(self):
         super().__init__()
         uic.loadUi('project_manager.ui', self)
+
+        self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
+        self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
         
         self.search_field.textChanged.connect(self.handleSearch)
         self.search_field.returnPressed.connect(self.handleSearch)
         self.search_button.clicked.connect(self.handleSearch)
         self.list_view.setSpacing(5)
-        # self.list_view.itemClicked.connect()
+        self.list_view.itemClicked.connect(self.handleClickItem)
         self.populate_list()
-
         self.all_radio.setChecked(True)
 
         self.all_radio.lang = "all"
@@ -36,12 +40,16 @@ class DemoApp(QWidget):
         self.js_radio.toggled.connect(self.handleRadio)
         self.c_radio.toggled.connect(self.handleRadio)
 
+    def handleClickItem(self, item):
+        os.startfile(item.value.get(0))
+
 
     def handleSearch(self):
         query = self.search_field.text()
         filter_list = file_manager.search_projects(query, file_manager.get_all_projects())
         self.populate_list(project_list=filter_list, default=False)
     
+
     def handleRadio(self):
         radio_button = self.sender()
         if radio_button.isChecked():
@@ -64,6 +72,7 @@ class DemoApp(QWidget):
             item.setIcon(icon)
             item.value = projects
             self.list_view.addItem(item)
+        self.count_label.setText(f"Showing {self.list_view.count()} Projects")
     
     def get_list_items(self):
         new_list = []
