@@ -40,6 +40,10 @@ class DemoApp(QWidget):
         self.js_radio.toggled.connect(self.handleRadio)
         self.c_radio.toggled.connect(self.handleRadio)
 
+    def keyPressEvent(self, event):
+        if event.key() == QtCore.Qt.Key_Escape: 
+            self.close()
+
     def handleClickItem(self, item):
         os.startfile(item.value.get(0))
 
