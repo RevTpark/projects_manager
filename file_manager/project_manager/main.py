@@ -9,7 +9,7 @@ from PyQt5.QtGui import QColor, QIcon, QPixmap
 class DemoApp(QWidget):
     def __init__(self):
         super().__init__()
-        uic.loadUi('project_manager.ui', self)
+        uic.loadUi('./project_manager.ui', self)
 
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
         self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
