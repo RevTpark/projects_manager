@@ -8,5 +8,6 @@ logos = {
     'dart': QPixmap('./icons/dart_logo.png'), 
     'java': QPixmap('./icons/java_logo.png'), 
     'py': QPixmap('./icons/python_logo.png'), 
-    'c': QPixmap('./icons/c_logo.png')
+    'c': QPixmap('./icons/c_logo.png'),
+    'ipynb': QPixmap('./icons/jupyter_logo.png'),
 }

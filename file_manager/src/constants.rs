@@ -8,7 +8,7 @@ impl GlobalConstants{
     pub fn new() -> Self{
         GlobalConstants{
             base_directory: String::from("C:\\Users\\tanis\\"),
-            project_directories: vec![String::from("PycharmProject"), String::from("StudioProjects"), String::from("VScode projects")]
+            project_directories: vec![String::from("PycharmProject"), String::from("StudioProjects"), String::from("VScode projects"), String::from("Jupyter Projects")]
         }
     }
 }
