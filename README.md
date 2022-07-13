@@ -7,11 +7,13 @@
 - I had my all projects in different directories due to which I had difficulty locating them. 
 - So I thought I needed to make a app that gathers all my project directories and shows them in one place.
 ## Functionalities
-- Made a floating GUI that displays all my projects in one place.
+- Made a Overlay GUI that displays all my projects in one place.
 - Added what project used what language as an icon beside the directory.
 - Allows to filter on basis on langauge used.
 - Allows to search for a particular directory/project based on name.
-- Clicking on the name opens the particular project folder
+- Clicking on the name opens the particular project folder.
 ## Execution
 - I wrote all the backend needed in Rust and made a Python module using PyO3.
 - Used Qt5 designer I designed GUI of the application. Imported the ui file and created the frontend functionality.
+- Wrote algorithm that surfs through all the file folders and finds all the related projects.
+- Another recursive algorithm explores a particular project folder and returns top language used in the project(also has functionality to skip over certain files/folders that should not be explored).
