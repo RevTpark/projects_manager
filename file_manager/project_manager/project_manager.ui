@@ -205,6 +205,20 @@ color: white;</string>
       </property>
      </widget>
     </item>
+    <item>
+     <widget class="QRadioButton" name="ts_radio">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>TS</string>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QLabel" name="count_label">

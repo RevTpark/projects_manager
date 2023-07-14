@@ -5,6 +5,10 @@ from PyQt5.QtWidgets import QApplication, QWidget, QListWidgetItem
 from PyQt5 import uic, QtCore, QtWidgets
 from PyQt5.QtGui import QColor, QIcon, QPixmap
 
+'''
+To build App into .exe
+pyinstaller --noconsole --icon=icon.ico  -F main.py --name='Projects Manager'
+'''
 
 class DemoApp(QWidget):
     def __init__(self):
@@ -30,6 +34,7 @@ class DemoApp(QWidget):
         self.css_radio.lang = "css"
         self.js_radio.lang = "js"
         self.c_radio.lang = "c"
+        self.ts_radio.lang = "tsx"
 
         self.all_radio.toggled.connect(self.handleRadio)
         self.python_radio.toggled.connect(self.handleRadio)
@@ -39,6 +44,7 @@ class DemoApp(QWidget):
         self.css_radio.toggled.connect(self.handleRadio)
         self.js_radio.toggled.connect(self.handleRadio)
         self.c_radio.toggled.connect(self.handleRadio)
+        self.ts_radio.toggled.connect(self.handleRadio)
 
     def keyPressEvent(self, event):
         if event.key() == QtCore.Qt.Key_Escape: 
